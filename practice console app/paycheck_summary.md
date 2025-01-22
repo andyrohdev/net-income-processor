@@ -8,21 +8,22 @@
 ## Fixed Deductions
 | Deduction Name | Amount |
 |----------------|--------|
-| State Tax | $300.0 |
+| Car insurance | $54.0 |
+| Gas | $22.5 |
+| Parking | $44.0 |
+| State Tax | $500.0 |
+| ZZZ | $90.0 |
+| Tuition | $175.0 |
 | Food | $20.0 |
-| Parking | $20.0 |
-| **Total Fixed Deductions** | **$340.0** |
+| **Total Fixed Deductions** | **$905.5** |
 
 ## Percentage Deductions
 | Deduction Name | Rate (%) | Amount |
 |----------------|----------|--------|
-| Investing | 70.0% | $1162.0 |
-| Saving | 10.0% | $166.0 |
-| Personal | 5.0% | $83.0 |
-| Temp | 1.0% | $16.6 |
-| **Total Percentage Deductions** |  | **$1427.6** |
+| Investing (PC) | 85.0% | $85.0 |
+| **Total Percentage Deductions** |  | **$930.33** |
 
 ## Net Income
 | Description | Amount |
 |-------------|--------|
-| Net Income | $232.4000000000001 |
+| Net Income | $164.17 |

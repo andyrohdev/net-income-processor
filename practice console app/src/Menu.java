@@ -3,8 +3,8 @@ import java.util.Map;
 class Menu {
 
     public static void displayMainMenu() {
-        System.out.println("Welcome to Paycheck Calculator");
-        System.out.println("By, Andy Roh");
+        System.out.println("Welcome to NIP, Net Income Processor");
+        System.out.println("By Andy Roh");
         System.out.println("Main Menu:");
         System.out.println("1. Calculate");
         System.out.println("2. About");
@@ -14,13 +14,19 @@ class Menu {
     }
 
     public static void displayAbout() {
-        System.out.println("This is a paycheck calculator app to help you calculate net earnings after deductions.");
-        System.out.println("Disclaimer: This tool is not 100% accurate. It serves to have a general guideline for expectations and future planning.");
-        System.out.println("For best use, please refer to the documentation on GitHub.");
+        System.out.println("Welcome to the NIP (Net Income Processor) App!");
+        System.out.println("This tool is designed to help you break down your paycheck, manage deductions, and plan your finances with ease.");
+        System.out.println("Whether you're budgeting for the month or exploring future financial goals, NIP provides a clear picture of your earnings.");
+        System.out.println("Disclaimer: While this app aims to be as accurate as possible, it is not a substitute for professional financial advice.");
+        System.out.println("For detailed instructions and updates, visit our GitHub page.");
     }
 
     public static void displayHelp() {
-        System.out.println("If you need assistance, check the documentation or contact support at rohjamesandy@gmail.com");
+        System.out.println("Need a hand? No problem!");
+        System.out.println("1. Visit our comprehensive documentation on GitHub for step-by-step guidance.");
+        System.out.println("2. Reach out to support at rohjamesandy@gmail.com for any unresolved questions.");
+        System.out.println("3. Don’t forget to double-check your inputs, such as state tax rates and deductions, to ensure accuracy.");
+        System.out.println("We’re here to help you make the most out of your paycheck calculations!");
     }
 
     public static void displayPaycheckSummary(double grossIncome, Map<String, Double> fixedDeductions,

@@ -48,7 +48,9 @@ public class Calculation {
         totalPercentageDeductions = Math.round(totalPercentageDeductions * 100.0) / 100.0;  // Round to two decimal places
 
         // Calculate net income
-        double netIncome = Math.round(remainingAfterFixed - totalPercentageDeductions) / 100.00; // Round to two decimal places
+        // Calculate net income
+        double netIncome = remainingAfterFixed - totalPercentageDeductions;
+        netIncome = Math.round(netIncome * 100.0) / 100.0; // Correct rounding method for net income
 
         // Display "Calculating..."
         Menu.displayCalculatingMessage();
