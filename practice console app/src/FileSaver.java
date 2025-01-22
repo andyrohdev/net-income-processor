@@ -1,16 +1,13 @@
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
+import java.util.Map;
 
 class FileSaver {
     public static void saveToFile(
             double grossIncome,
-            List<String> fixedNames,
-            List<Double> fixedAmounts,
-            List<String> percentageNames,
-            List<Double> percentageRates,
-            List<Double> percentageAmounts,
+            Map<String, Double> fixedDeductions,
+            Map<String, Double> percentageDeductions,
             double totalFixedDeductions,
             double totalPercentageDeductions,
             double netIncome
@@ -29,8 +26,9 @@ class FileSaver {
             writer.write("| Deduction Name | Amount |\n");
             writer.write("|----------------|--------|\n");
 
-            for (int i = 0; i < fixedNames.size(); i++) {
-                writer.write("| " + fixedNames.get(i) + " | $" + fixedAmounts.get(i) + " |\n");
+            // Write fixed deductions from map
+            for (Map.Entry<String, Double> entry : fixedDeductions.entrySet()) {
+                writer.write("| " + entry.getKey() + " | $" + entry.getValue() + " |\n");
             }
             writer.write("| **Total Fixed Deductions** | **$" + totalFixedDeductions + "** |\n");
 
@@ -38,8 +36,9 @@ class FileSaver {
             writer.write("| Deduction Name | Rate (%) | Amount |\n");
             writer.write("|----------------|----------|--------|\n");
 
-            for (int i = 0; i < percentageNames.size(); i++) {
-                writer.write("| " + percentageNames.get(i) + " | " + percentageRates.get(i) + "% | $" + percentageAmounts.get(i) + " |\n");
+            // Write percentage deductions from map
+            for (Map.Entry<String, Double> entry : percentageDeductions.entrySet()) {
+                writer.write("| " + entry.getKey() + " | " + entry.getValue() + "% | $" + percentageDeductions.get(entry.getKey()) + " |\n");
             }
             writer.write("| **Total Percentage Deductions** |  | **$" + totalPercentageDeductions + "** |\n");
 

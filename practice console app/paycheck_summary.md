@@ -10,22 +10,19 @@
 |----------------|--------|
 | State Tax | $300.0 |
 | Food | $20.0 |
-| Gas | $20.0 |
 | Parking | $20.0 |
-| Membership | $25.0 |
-| Loan | $100.0 |
-| Car insurance | $65.0 |
-| **Total Fixed Deductions** | **$550.0** |
+| **Total Fixed Deductions** | **$340.0** |
 
 ## Percentage Deductions
 | Deduction Name | Rate (%) | Amount |
 |----------------|----------|--------|
-| Investing | 70.0% | $1015.0 |
-| Saving | 10.0% | $145.0 |
-| Personal Spending | 5.0% | $72.5 |
-| **Total Percentage Deductions** |  | **$1232.5** |
+| Investing | 70.0% | $1162.0 |
+| Saving | 10.0% | $166.0 |
+| Personal | 5.0% | $83.0 |
+| Temp | 1.0% | $16.6 |
+| **Total Percentage Deductions** |  | **$1427.6** |
 
 ## Net Income
 | Description | Amount |
 |-------------|--------|
-| Net Income | $217.5 |
+| Net Income | $232.4000000000001 |
