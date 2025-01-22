@@ -126,7 +126,7 @@ Thank you for using the Net Income Processor!
 ```
 
 ## **Contributing**
-We welcome contributions to the Paycheck Calculator! To get involved:
+We welcome contributions to NIP! To get involved:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-name`).
