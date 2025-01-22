@@ -76,7 +76,7 @@ We welcome contributions to the Paycheck Calculator! To get involved:
 5. Create a new pull request.
 
 ## **License**
-This project is licensed under the MIT License - see the [LICENSE.txt](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
 
 ## **Contact**
 For further information or assistance, feel free to contact me at **rohjamesandy@gmail.com** or visit the [documentation on GitHub](https://github.com/andyrohdev/net-income-processor).
