@@ -58,12 +58,71 @@ When you run the program, you will be presented with the following options on th
 
 ### Sample Output:
 ```
-Gross Income: $2000.00
-State Tax: $100.00
-Fixed Deduction: $50.00
-Percentage Deduction: $150.00
+Welcome to the Net Income Processor (NIP)!
 
-Net Income: $1700.00
+Please select an option from the menu:
+1. Start Calculation
+2. About
+3. Help
+4. Quit
+
+> 1
+
+Choose your pay method:
+1. Hourly
+2. Annual Salary
+3. Fixed paycheck value
+
+> 1
+
+Enter your hourly wage: $20.00
+Enter hours worked this pay period: 80
+
+Enter your state tax rate (e.g., 5 for 5%): 5
+
+Choose your deductions:
+1. Add fixed amount deduction
+2. Add percentage deduction
+3. Done with deductions
+4. Undo last deduction
+
+> 1
+
+Enter deduction name: Health Insurance
+Enter amount: $100.00
+
+Choose your deductions:
+1. Add fixed amount deduction
+2. Add percentage deduction
+3. Done with deductions
+4. Undo last deduction
+
+> 2
+
+Enter deduction name: Retirement
+Enter percentage: 5
+
+Done with deductions.
+
+Calculating...
+
+Paycheck Summary:
+-------------------
+Gross Income: $1600.00
+State Tax: $80.00
+Fixed Deduction (Health Insurance): $100.00
+Percentage Deduction (Retirement 5%): $80.00
+
+Net Income: $1340.00
+
+Would you like to save this summary to a file? (y/n)
+
+> y
+
+Paycheck summary saved to 'paycheck-summary.md' in the current directory.
+
+Thank you for using the Net Income Processor!
+
 ```
 
 ## **Contributing**
