@@ -10,7 +10,7 @@ public class Calculation {
 
     public Calculation(Scanner scanner) {
         this.scanner = scanner;
-        this.deductionStack = new Stack<>();  // Initialize the stack
+        this.deductionStack = new Stack<>();  // Initialize the stack for the undo feature
     }
 
     public void performCalculation() {
