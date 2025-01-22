@@ -18,7 +18,7 @@ To get started with the Paycheck Calculator:
 
 1. Clone the repository:
    ```bash
-   https://github.com/andyrohdev/net-income-processor.git
+   git clone https://github.com/andyrohdev/net-income-processor.git
    ```
 
 2. Navigate to the project directory:
@@ -28,8 +28,8 @@ To get started with the Paycheck Calculator:
 
 3. Compile and run the program:
    ```bash
-   javac Main.java
-   java Main
+   javac src/Main.java
+   java -cp src Main
    ```
 
 ## **Usage**
@@ -79,4 +79,4 @@ We welcome contributions to the Paycheck Calculator! To get involved:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## **Contact**
-For further information or assistance, feel free to contact me at **rohjamesandy@gmail.com** or visit the [documentation on GitHub](https://github.com/yourusername/pca).
+For further information or assistance, feel free to contact me at **rohjamesandy@gmail.com** or visit the [documentation on GitHub](https://github.com/andyrohdev/net-income-processor).
