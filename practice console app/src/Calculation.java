@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Calculation {
@@ -60,31 +61,51 @@ public class Calculation {
     }
 
     private double getGrossIncome() {
-        System.out.println("Choose your pay method:");
-        System.out.println("1. Hourly");
-        System.out.println("2. Annual Salary");
-        System.out.println("3. Fixed paycheck value");
-        int payMethod = scanner.nextInt();
-        scanner.nextLine();
+        double grossIncome = 0;
+        boolean validChoice = false;
 
-        switch (payMethod) {
-            case 1:
-                System.out.print("Enter your hourly wage: $");
-                double hourlyWage = scanner.nextDouble();
-                System.out.print("Enter hours worked this pay period: ");
-                double hoursWorked = scanner.nextDouble();
-                return hourlyWage * hoursWorked;
-            case 2:
-                System.out.print("Enter your annual salary: $");
-                double annualSalary = scanner.nextDouble();
-                return annualSalary / 26; // Bi-weekly pay periods
-            case 3:
-                System.out.print("Enter your fixed paycheck value: $");
-                return scanner.nextDouble();
-            default:
-                System.out.println("Invalid choice. Returning to main menu.");
-                return 0;
+        while (!validChoice) {
+            System.out.println("Choose your pay method:");
+            System.out.println("1. Hourly");
+            System.out.println("2. Annual Salary");
+            System.out.println("3. Fixed paycheck value");
+
+            // Handle invalid input for integer choice
+            try {
+                int payMethod = scanner.nextInt();
+                scanner.nextLine();  // Clear the buffer
+
+                switch (payMethod) {
+                    case 1:
+                        System.out.print("Enter your hourly wage: $");
+                        double hourlyWage = scanner.nextDouble();
+                        System.out.print("Enter hours worked this pay period: ");
+                        double hoursWorked = scanner.nextDouble();
+                        grossIncome = hourlyWage * hoursWorked;
+                        validChoice = true; // Exit the loop
+                        break;
+                    case 2:
+                        System.out.print("Enter your annual salary: $");
+                        double annualSalary = scanner.nextDouble();
+                        grossIncome = annualSalary / 26; // Bi-weekly pay periods
+                        validChoice = true; // Exit the loop
+                        break;
+                    case 3:
+                        System.out.print("Enter your fixed paycheck value: $");
+                        grossIncome = scanner.nextDouble();
+                        validChoice = true; // Exit the loop
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please select a valid option.");
+                        break; // Loop again until valid input
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine(); // Clear the invalid input
+            }
         }
+
+        return grossIncome;
     }
 
     private double getStateTaxRate() {
@@ -93,37 +114,52 @@ public class Calculation {
     }
 
     private void processDeductions(ArrayList<String> fixedNames, ArrayList<Double> fixedAmounts, ArrayList<String> percentageNames, ArrayList<Double> percentageRates) {
-        while (true) {
+        boolean validChoice = false;
+
+        while (!validChoice) {
             System.out.println("1. Add fixed amount deduction");
             System.out.println("2. Add percentage deduction");
             System.out.println("3. Done with deductions");
             System.out.println("4. Undo last deduction");
             System.out.print("Choose an option: ");
-            int choice = scanner.nextInt();
-            scanner.nextLine();
 
-            if (choice == 1) {
-                System.out.print("Enter deduction name: ");
-                String name = scanner.nextLine();
-                System.out.print("Enter amount: $");
-                double amount = scanner.nextDouble();
-                amount = Math.round(amount * 100.0) / 100.0;  // Round to two decimal places
-                fixedNames.add(name);
-                fixedAmounts.add(amount);
-            } else if (choice == 2) {
-                System.out.print("Enter deduction name: ");
-                String name = scanner.nextLine();
-                System.out.print("Enter percentage: ");
-                double percentage = scanner.nextDouble();
-                percentageNames.add(name);
-                percentageRates.add(percentage);
-            } else if (choice == 3) {
-                break;
-            } else if (choice == 4) {
-                // Undo last deduction
-                undoDeduction(fixedNames, fixedAmounts, percentageNames, percentageRates);
-            } else {
-                System.out.println("Invalid choice.");
+            // Handle invalid input for integer choice
+            try {
+                int choice = scanner.nextInt();
+                scanner.nextLine();  // Clear the buffer
+
+                switch (choice) {
+                    case 1:
+                        System.out.print("Enter deduction name: ");
+                        String name = scanner.nextLine();
+                        System.out.print("Enter amount: $");
+                        double amount = scanner.nextDouble();
+                        amount = Math.round(amount * 100.0) / 100.0;  // Round to two decimal places
+                        fixedNames.add(name);
+                        fixedAmounts.add(amount);
+                        break;
+                    case 2:
+                        System.out.print("Enter deduction name: ");
+                        String percentageName = scanner.nextLine();
+                        System.out.print("Enter percentage: ");
+                        double percentage = scanner.nextDouble();
+                        percentageNames.add(percentageName);
+                        percentageRates.add(percentage);
+                        break;
+                    case 3:
+                        validChoice = true; // Exit the loop when done
+                        break;
+                    case 4:
+                        // Undo last deduction
+                        undoDeduction(fixedNames, fixedAmounts, percentageNames, percentageRates);
+                        break;
+                    default:
+                        System.out.println("Invalid choice. Please select a valid option.");
+                        break; // Continue looping until valid input
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please enter a number.");
+                scanner.nextLine(); // Clear the invalid input
             }
         }
     }
