@@ -19,6 +19,7 @@ public class Calculation {
 
         // Calculate state tax and add to fixed deductions
         double stateTax = (stateTaxRate / 100) * grossIncome;
+        stateTax = Math.round(stateTax * 100.0) / 100.0;  // Round to two decimal places
         fixedDeductionNames.add("State Tax");
         fixedDeductionAmounts.add(stateTax);
 
@@ -30,6 +31,7 @@ public class Calculation {
         for (double amount : fixedDeductionAmounts) {
             totalFixedDeductions += amount;
         }
+        totalFixedDeductions = Math.round(totalFixedDeductions * 100.0) / 100.0;  // Round to two decimal places
 
         // Calculate remaining income after fixed deductions
         double remainingAfterFixed = grossIncome - totalFixedDeductions;
@@ -38,9 +40,11 @@ public class Calculation {
         double totalPercentageDeductions = 0;
         for (double rate : percentageDeductionRates) {
             double deductionAmount = (rate / 100) * remainingAfterFixed;
+            deductionAmount = Math.round(deductionAmount * 100.0) / 100.0;  // Round to two decimal places
             percentageDeductionAmounts.add(deductionAmount);
             totalPercentageDeductions += deductionAmount;
         }
+        totalPercentageDeductions = Math.round(totalPercentageDeductions * 100.0) / 100.0;  // Round to two decimal places
 
         // Calculate net income
         double netIncome = remainingAfterFixed - totalPercentageDeductions;
@@ -103,6 +107,7 @@ public class Calculation {
                 String name = scanner.nextLine();
                 System.out.print("Enter amount: $");
                 double amount = scanner.nextDouble();
+                amount = Math.round(amount * 100.0) / 100.0;  // Round to two decimal places
                 fixedNames.add(name);
                 fixedAmounts.add(amount);
             } else if (choice == 2) {
