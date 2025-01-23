@@ -41,9 +41,14 @@ class Menu {
         }
         System.out.println("Total Fixed Deductions: $" + totalFixedDeductions);
 
+        double remainingAfterFixed = grossIncome - totalFixedDeductions;
+
         System.out.println("\nPercentage Deductions:");
         for (Map.Entry<String, Double> entry : percentageDeductions.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue() + "% | Amount: $" + percentageDeductions.get(entry.getKey()));
+            String deductionName = entry.getKey();
+            double percentage = entry.getValue();
+            double amount = Math.round((percentage / 100) * remainingAfterFixed * 100.0) / 100.0; // Calculate and round to two decimals
+            System.out.println(deductionName + ": " + percentage + "% | Amount: $" + amount);
         }
         System.out.println("Total Percentage Deductions: $" + totalPercentageDeductions);
 
