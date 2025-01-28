@@ -9,20 +9,18 @@
 ## Fixed Deductions
 | Deduction Name | Amount |
 |----------------|--------|
-| Gas  | $40.0 |
 | State Tax | $500.0 |
-| Tuition | $300.0 |
-| Food | $40.0 |
-| **Total Fixed Deductions** | **$880.0** |
+| FOod | $20.0 |
+| **Total Fixed Deductions** | **$520.0** |
 
 ## Percentage Deductions
 | Deduction Name | Rate (%) | Amount |
 |----------------|----------|--------|
-| Investing | 70.0% | $70.0 |
-| Saving | 20.0% | $20.0 |
-| **Total Percentage Deductions** |  | **$1008.0** |
+| Investing | 30.0% | $444.0 |
+| Saving | 20.0% | $296.0 |
+| **Total Percentage Deductions** |  | **$740.0** |
 
 ## Net Income
 | Description | Amount |
 |-------------|--------|
-| Net Income | $112.0 |
+| Net Income | $740.0 |

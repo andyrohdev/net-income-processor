@@ -38,9 +38,16 @@ class FileSaver {
             writer.write("|----------------|----------|--------|\n");
 
             // Write percentage deductions from map
+
+            double remainingAfterFixed = grossIncome - totalFixedDeductions;
+
             for (Map.Entry<String, Double> entry : percentageDeductions.entrySet()) {
-                writer.write("| " + entry.getKey() + " | " + entry.getValue() + "% | $" + percentageDeductions.get(entry.getKey()) + " |\n");
+                String deductionName = entry.getKey();
+                double percentage = entry.getValue();
+                double amount = Math.round((percentage / 100) * remainingAfterFixed * 100.0) / 100.0; // Calculate and round to two decimals
+                writer.write("| " + deductionName + " | " + percentage + "% | $" + amount + " |\n");
             }
+
             writer.write("| **Total Percentage Deductions** |  | **$" + totalPercentageDeductions + "** |\n");
 
             writer.write("\n## Net Income\n");
