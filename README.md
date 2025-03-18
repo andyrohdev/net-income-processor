@@ -5,7 +5,7 @@
 Welcome to the **Net Income Processor (NIP)**! This Java-based console application allows users to calculate their net earnings after deductions, offering a simple yet effective tool for paycheck management. Whether you're an hourly worker, salaried employee, or have a paycheck you want to plan for, this tool helps you get a breakdown of your gross income, deductions, and net income.
 
 ## **Features**
-- **Main Calculation Process**: Choose from different pay methods (hourly, salary, or fixed paycheck) to calculate your gross income.
+- **NetIncomeProcessor Calculation Process**: Choose from different pay methods (hourly, salary, or fixed paycheck) to calculate your gross income.
 - **State Tax**: Enter your state tax rate, which is considered as a fixed deduction.
 - **Add Custom Deductions**: Users can add custom deductions, both fixed amounts and percentage-based, to simulate taxes, insurance, retirement contributions, and other expenses.
 - **Undo Deductions**: You can easily undo the last deduction, whether it was fixed or percentage-based.
@@ -28,8 +28,8 @@ To get started with the Paycheck Calculator:
 
 3. Compile and run the program:
    ```bash
-   javac src/Main.java
-   java -cp src Main
+   javac src/NetIncomeProcessor.java
+   java -cp src NetIncomeProcessor
    ```
 
 ## **Usage**
